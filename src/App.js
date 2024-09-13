@@ -1,8 +1,9 @@
-
-import './App.css';
-
 import clsx from "clsx";
 import {useState} from "react";
+import ToggleButton from "./ToggleButton.jsx";
+import "./App.css";
+import "./index.css";
+
 const App = () => {
 
 const [isDark,setIsDark] = useState(true);
@@ -10,10 +11,14 @@ const [isDark,setIsDark] = useState(true);
   return (
     <div className="outerContainer flex justify-center p-4">
      
-     <div className={clsx("p-4 flex flex-col innerContainer w-full max-w-xl",isDark ? "text-slate-700 bg-slate-400": "bg-white text-slate-500" )}>
-       <button
-         onClick={()=> setIsDark(!isDark) }
-         >{isDark? "dark mode" : "light mode" }</button>
+     <div className={clsx("p-4 flex flex-col innerContainer w-full max-w-3xl",isDark ? "text-slate-700 bg-slate-400": "bg-white text-slate-500" )}>
+       
+       <ToggleButton
+         enable={isDark}
+         handleClick={()=> setIsDark(!isDark) }
+         >{isDark? "dark mode" : "light mode" }</ToggleButton>
+
+
         <p className="my-4">
         The internet is a global network that connects millions of private, public, academic, 
         business, and government networks through a variety of physical infrastructures 
@@ -46,6 +51,20 @@ const [isDark,setIsDark] = useState(true);
          information to travel, ensuring efficient delivery, even if certain routes become 
          congested or unavailable.
       </p>
+
+      <p className="my-5" >In terms of security, the internet relies on encryption protocols like HTTPS
+         to protect data during transmission. HTTPS encrypts data between the user and the server, making
+          it much harder for hackers or malicious actors to intercept and read sensitive information, 
+          such as passwords or credit card details. This secure layer is especially important for
+           activities like online banking, shopping, and private communications.
+
+</p>
+      <p className="my-6" >Lastly, the internet is decentralized, meaning no single entity controls it. 
+        Various organizations and stakeholders collaborate to manage standards and policies,
+         such as the Internet Engineering Task Force (IETF) and the Internet Corporation for 
+         Assigned Names and Numbers (ICANN). This decentralized nature helps ensure the internet
+          remains open and accessible, though it also presents challenges in governance and regulation, 
+          particularly with issues like cybersecurity and privacy.</p>
 
        
      </div>
