@@ -14,7 +14,6 @@ const [isDark,setIsDark] = useState(true);
      <div className={clsx("p-4 flex flex-col innerContainer w-full max-w-3xl",isDark ? "text-slate-700 bg-slate-400": "bg-white text-slate-500" )}>
        
        <ToggleButton
-         enable={isDark}
          handleClick={()=> setIsDark(!isDark) }
          >{isDark? "dark mode" : "light mode" }</ToggleButton>
 

@@ -2,7 +2,7 @@ import clsx from "clsx";
 
 const ToggleButton=(props)=> {
 
-  const {enable,handleClick} = props;
+  const {enable,handleClick,children} = props;
   return(
 
     <div className=" flex justify-center">
@@ -15,7 +15,7 @@ const ToggleButton=(props)=> {
   
   </button>
 
-<div>{enable ? "dark mode" : "light mode"}</div>
+<div>{children}</div>
       
     </div>
     
